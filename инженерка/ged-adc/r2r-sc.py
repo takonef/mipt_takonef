@@ -2,7 +2,7 @@ import r2r_adc
 import time
 import adc_plot
 
-dynamic_range = 3.16
+dynamic_range = 3.2
 adc = r2r_adc.R2R_ADC(dynamic_range)
 voltage_values = []
 time_values = []

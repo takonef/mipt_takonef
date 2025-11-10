@@ -33,17 +33,28 @@ class R2R_ADC:
                 break
         return value;        
 
-    def successive_approximation_adc(self):
-        signal = [0]*8
-        for i in signal:
-            i = 1
-            GPIO.output(self.leds, signal)
-            comparatorValue = GPIO.input(self.comp_gpio)
-            if comparatorValue:
-                i = 0
-        
     def get_sc_voltage(self):
         return (self.sequential_counting_adc()/256) * self.dynamic_range
+
+    def successive_approximation_adc(self):
+        signal = [0]*8
+        value = 0
+        for i in range(8):
+            signal[i] = 1
+            GPIO.output(self.leds, signal)
+            time.sleep(self.compare_time)
+            comparatorValue = GPIO.input(self.comp_gpio)
+            if comparatorValue:
+                signal[i] = 0
+            value += signal[i]*(2**(7-i))
+        
+        GPIO.output(self.leds, signal)
+        # print(value)
+        return value
+
+    def get_sar_voltage(self):
+        return (self.successive_approximation_adc()/256) * self.dynamic_range
+
 
 
 if __name__ == "__main__":
@@ -51,7 +62,7 @@ if __name__ == "__main__":
     try:
         adc = R2R_ADC(dynamic_range)
         while True:
-            print(adc.get_sc_voltage())
+            print(adc.get_sar_voltage())
             time.sleep(0.5)
     finally:
         adc.deinit()

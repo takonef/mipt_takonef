@@ -23,4 +23,5 @@ def plot_sampling_period_hist(time):
     plt.ylabel("Количество измерений")
 
     plt.grid(True, which = 'major', linestyle = '-')
+    plt.xlim(0, 0.1)
     plt.show()
