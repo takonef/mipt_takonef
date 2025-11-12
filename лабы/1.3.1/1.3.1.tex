@@ -1,0 +1,296 @@
+\documentclass[a4paper]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{wrapfig}
+\usepackage{enumitem}
+\usepackage[center]{caption}
+\usepackage[english, russian]{babel}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{multirow}
+\geometry{verbose, a4paper, tmargin=2cm, bmargin=2cm, lmargin=2.0cm, rmargin=2.0cm}
+
+\begin{document}
+
+\begin{titlepage}
+	\centering
+	{\scshape\Large МОСКОВСКИЙ ФИЗИКО-ТЕХНИЧЕСКИЙ ИНСТИТУТ \\
+	(НАЦИОНАЛЬНЫЙ ИССЛЕДОВАТЕЛЬСКИЙ УНИВЕРСИТЕТ)\\ % название ВУЗа большим шрифтом
+    Физтех-школа аэрокосмических технологий}
+	
+	\vspace{4cm} % отступ 4 см по вертикали
+	{\LARGE Отчет о выполнении лабораторной работы 1.3.1}
+	
+	\vspace{1cm} % ещё 1 см
+	{\huge\bf Определение модуля Юнга на основе исследования деформации растяжения и изгиба}
+	
+	\vspace{1cm} % ещё 1 см
+	\vfill % заполнение по вертикали пустотой (LaTeX сам решит, сколько здесь отступить)
+	
+    \begin{flushright} % Этот текст будет с правого края страницы
+	   {\LARGE Ефремова Татьяна, Б03-503}
+    \end{flushright}
+    \vfill
+
+	\today % Дата сборки документа
+\end{titlepage}
+
+\section{Аннотация}
+Цели работы: экспериментально получить зависимость между напряжением и деформацией для двух простейших напряженных состояний упругих тел: одностороннего сжатия и чистого изгиба; по результатам эксперимента вычислить модул Юнга.
+
+\section{Определение модуля Юнга по измерениям \\ растяжения проволоки}
+\subsection{Теоретические сведения}
+Растяжение проволоки соответствует напряженному состоянию вдоль одной оси, которое описывается формулой:
+\begin{equation}
+\frac{F}{S} = E \frac{\Delta l}{l}.
+\end{equation}
+\begin{wrapfigure}{R}{0.27\textwidth}
+    \includegraphics[width=1\linewidth]{C:/Users/User/Documents/mipt_takonef/лабы/1.3.1/1.3.1_scheme.PNG}
+    \caption{Прибор Лермантова}
+\end{wrapfigure}
+Эту формулу можно записать в виде:
+\begin{equation}
+F = k\Delta l,
+\end{equation}
+
+\noindent где $k = \frac{ES}{l}$ – жесткость проволоки. Для определения модуля Юнга используется прибор Лермонтова, схема которого изображена на рис. 1. Верхний конец проволоки П, изготовленной из исследуемого материала, прикреплен к консоли К, а нижний – к цилиндру, которым окнчивается шарнирный кронштейн Ш. На этот же цилиндр опирается рычаг $r$, связанный с зеркальцем 3. Направим зрительную трубку на зеркальце. Выведем формулу для расчета растяжения длины проволоки по показаниям шкалы прибора. Так как мы считаем проволоку слабо растяжимой, $\Delta l$ значительно меньше $r$. Тогда угол наклона зеркальца к горизонтали можно найти как $\varphi = \frac{\Delta l}{r}$. \\ \\
+С другой стороны, из соображений геометрической оптики угол $\varphi$ можно найти как угол между продолжениями соответствующих лучей:
+\begin{equation}
+\varphi = \frac{n}{2h},
+\end{equation}
+где $n$ – показания шкалы, $h$ – расстояние от шкалы до зеркальца.
+Таким образом, удлинение проволоки выражается  как:
+\begin{equation}
+\Delta l = n\frac{r}{2h},
+\end{equation}
+Отсюда формулу (1) можно переписать как:
+\begin{equation}
+F = \frac{ESr}{2lh}n,
+\end{equation}
+
+\noindent Таким образом, удлинение проволоки можно измерить по углу поворота зеркальца. Натяжение проволоки можно менять перекладыванием грузов с площадки О на площадку М, не меняя при этом нагрузку на кронштейн, и, как следствие, его деформацию. 
+
+\subsection{Используемое оборудование}
+Прибор Лермантова, проволока из исследуемого материала, зрительная труба со шкалой, набор грузов, микрометр, рулетка.
+
+\subsection{Инструментальные погрешности}
+
+\setdescription{leftmargin=0pt}
+\begin{description}
+    \item[микрометр]: $\Delta_\text{мк} = \pm 0.01$ мм.
+    \item[рулетка:] $\Delta_\text{р}=\pm5$ мм.
+    \item[шкала прибора:] $\Delta_\text{ш}=\pm0.1$ мм.
+\end{description}
+\newpage
+\subsection{Результаты измерений и обработка данных}
+Сведем характеристики установки в таблицу:
+\begin{table}[!h]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$d$, мм & $r$, мм & $l$, см & $h$, см & $\sigma$, кг/мм$^2$ \\
+\hline
+$0.51 \pm 0.01$ & $20 \pm 0.1$ & $173.4 \pm 0.5$ & $139,6 \pm 0.5$ & 90 \\
+\hline
+\end{tabular}
+\end{table} \\
+Оценим, сколько грузов можно подвесить к проволоке. Для этого найдем площадь сечения проволоки и погрешность:
+\[
+S = \frac{\pi d^2}{4} = 0.204 \, \text{мм}^2, \text{ }\sigma_S = 2S\frac{\sigma_d}{d} = 0.01 \, \text{мм}^2.
+\]
+Рабочая нагрузка:
+\[
+m_{\text{max}} = 0.3\sigma_{\text{пр}}S = 5.51 \, \text{кг}, \text{ }\sigma_{m_{\text{max}}} = 0.27 \, \text{кг}.
+\] \\
+Будем последовательно добавлять грузы.
+\begin{table}[!h]
+\caption{Зависимость показаний шкалы от нагрузки} 
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+$m$, гр & $P$, Н & $n_\uparrow$, мм &$n_\downarrow$, мм & $n_\uparrow$, мм &$n_\downarrow$, мм & $n_\uparrow$, мм & $n_\downarrow$, мм & $\Delta l$, мм \\
+\hline
+244,8&	2,40&	18,9&	16,8&	18,9&	16,7&18,9&	16,8&	2,12\\
+\hline
+245,8&	2,41&	20,9&	18,9&	21,0&	19,0&	20,9&18,9&	2,01\\
+\hline
+245,9&	2,41&	22,7&	20,9&	22,7&	21,0&	22,8&	20,9&	1,78\\
+\hline
+245,2&	2,40&	24,5&	22,7&	24,5&	22,6&	24,6&	22,7&	1,86\\
+\hline
+245,3&	2,41&	26,1&	24,5&	26,2&	24,6&	26,2&	24,6&	1,62\\
+\hline
+245,3&	2,41&	27,9&	26,3&	27,9&	26,3&	27,8&	26,2&	1,58\\
+\hline
+245,2&	2,40&	29,5&	28,0&	29,6&	28,0&	29,5&	28,0&	1,55\\
+\hline
+245,5&	2,40&	31,1&	29,6&	31,2&	29,6&31,1&	29,6&	1,55\\
+\hline
+244,0&	2,39&	32,6&	31,2&	32,7&	31,2&	32,7&	31,1&	1,50\\
+\hline
+244,2&	2,39&	34,2&	32,7&	34,3&	32,7&	34,2&	32,7&1,55\\
+\hline
+\end{tabular}
+\end{table}
+
+\noindent Т. к. зависимость $n$ от $P$ линейна, по методу наименьших квадратов:
+\[
+\begin{gathered}
+k = \frac{2lh}{ESr} = \frac{\langle nP \rangle}{\langle P^2 \rangle} \approx 0,702, \text{ } \sigma_k = \frac{1}{\sqrt{N}}\sqrt{\frac{ \langle n^2 \rangle }{ \langle P \rangle } - k^2} \approx 0,008.
+\end{gathered}
+\]
+\begin{figure}[!h]
+   \centering    
+    \includegraphics[width=1\linewidth]{C:/Users/User/Documents/mipt_takonef/лабы/1.3.1/1.3.1_1plot.png}
+    \caption{Линейная аппроксимация зависимости растяжения проволоки \\ от силы тяжести методом наименьших квадратов} 
+\end{figure}
+
+\noindent Тогда:
+\[
+E = \frac{2lh}{kSr} \approx 169 \text{ ГПа,} \quad \varepsilon_E = \sqrt{\varepsilon_l^2 + \varepsilon_h^2 + \varepsilon_k^2 + \varepsilon_S^2 + \varepsilon_r^2} \approx 0.10, \quad \sigma_E = E\varepsilon_E \approx 17 \, \text{ ГПа}.
+\]
+
+\section{Определение модуля Юнга по измерениям изгиба балки}
+\subsection{Теоретические сведения}
+Модуль Юнга материала стержня \( E \) связан с величиной прогиба \( y_{\text{max}} \) как:
+\begin{equation}
+E = \frac{P l^3}{4ab^3 y_{\text{max}}},
+\end{equation}
+где \( P \) - нагрузка на стержень, \( l \) - расстояние между точками опоры, \( a \) - ширина балки, \( b \) - высота балки. \\
+\begin{wrapfigure}{R}{0.27\textwidth}
+    \includegraphics[width=1\linewidth]{C:/Users/User/Documents/mipt_takonef/лабы/1.3.1/1.3.1_scheme2.PNG}
+    \caption{Схема установки}
+\end{wrapfigure}
+
+\noindent Экспериментальная установка состоит из прочной стойки с опорными призмами А и Б (рис. 3). На ребра призм опирается исследуемый стержень В. В середине стержня на призме Д подвешена площадка П с грузами. Измерять величину прогиба можно с помощью индикатора И, укрепляемого на отдельной штанге. Полный оборот большой стрелки индикатора соответствует 1 мм и одному делению малого циферблата.
+
+\subsection{Используемое оборудование}
+Стержни из исследуемого материала, набор грузов, линейка, микрометр, индикатор для измерения стрелы прогиба.
+
+\subsection{Инструментальные погрешности}
+
+\setdescription{leftmargin=0pt}
+\begin{description}
+    \item[микрометр]: $\Delta_\text{мк} = \pm 0.01$ мм.
+    \item[линейка:] $\Delta_\text{р}=\pm5$ мм.
+    \item[шкала прибора:] $\Delta_\text{ш}=\pm0.01$ мм.
+\end{description}
+
+\subsection{Результаты измерений и обработка данных}
+1. Сведем характеристики установки и балок в таблицу:
+\begin{table}[!h]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+& $l$, см & $a$, мм & $b$, мм \\
+\hline
+Сталь & 54,0 & 21,10 & 3,75\\
+\hline
+Медь & 54,0 & 21,69 & 3,90\\
+\hline
+Дерево & 54,0 & 20,17 & 10,20\\
+\hline
+\end{tabular}
+\end{table} \\
+2. Будем последовательно добавлять и снимать грузы на каждую из сторон балок.\\
+
+\noindent Т. к. зависимость $n$ от $P$ линейна, по методу наименьших квадратов:
+\[
+\begin{gathered}
+k = \frac{4ab^3}{El^3} = \frac{\langle nP \rangle}{\langle P^2 \rangle},  \text{ } \sigma_k = \frac{1}{\sqrt{N}}\sqrt{\frac{ \langle n^2 \rangle }{ \langle P \rangle } - k^2}.
+\end{gathered}
+\]
+
+\noindent Тогда:
+\[
+E = \frac{l^3}{4kab^3} \quad \varepsilon_E = \sqrt{3\varepsilon_l^2 + 3\varepsilon_a^2 + \varepsilon_b^2 + \varepsilon_k^2}, \quad \sigma_E = E\varepsilon_E.
+\] \\ \\
+Сведем все средние значения угловых коэффицентов и модулей Юнга в таблицу:
+\begin{table}[!h]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+& $k$, Н/мм & $\varepsilon_k$ & $E$, ГПа & $\varepsilon_E $ & $\sigma_E$\\
+\hline
+Сталь & 0.568 & 0,02 & 191 & 0,10 & 19\\
+\hline
+Медь & 1,000 & 0,02 & 105 & 0,11 & 12 \\
+\hline
+Дерево & 0.467 & 0,03 & 11 & 0,05 & 1\\
+\hline
+\end{tabular}
+\end{table}
+
+\newpage
+\begin{table}[!h]
+\caption{Показания для стали} 
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+$m$, гр & $P$, Н & $n_\uparrow$, мм &$n_\downarrow$, мм & $n_\uparrow$, мм &$n_\downarrow$, мм \\
+\hline
+508,7&4,99&	0,20&	0,21&	0,24&	0,29\\
+503,5&4,94&	0,90&	0,91&	0,94&	1,01\\
+496,2&4,87&	1,60&	1,59&	1,64&	1,64\\
+503,0&4,93&	2,31&	2,28&	2,32&	2,35\\
+500,0&4,91&	3,02&	2,98&	3,05&	3,11\\
+472,3&4,63&	3,64&	3,71&	3,69&	3,73\\
+461,8&4,53&	4,30&	4,30&	4,35&	4,35\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[!h]
+\caption{Показания для меди} 
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+$m$, гр & $P$, Н & $n_\uparrow$, мм &$n_\downarrow$, мм & $n_\uparrow$, мм &$n_\downarrow$, мм \\
+\hline
+508,7&4,99&	0,61&	0,62&	0,61&	0,64\\
+503,5&4,94&	1,85&	1,89&	1,88&	1,90\\
+496,2&4,87&	3,04&	3,07&	3,06&	3,11\\
+503,0&4,93&	4,28&	4,32&	4,33&	4,37\\
+500,0&4,91&	5,49&	5,55&	5,52&	5,58\\
+472,3&4,63&	6,66&	6,66&	6,75&	6,75\\
+\hline
+\end{tabular}
+\end{table}
+\begin{table}[!h]
+\caption{Показания для дерева} 
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+$m$, гр & $P$, Н & $n_\uparrow$, мм &$n_\downarrow$, мм & $n_\uparrow$, мм &$n_\downarrow$, мм \\
+\hline
+508,7&4,99&	0,28&	0,35&	0,20&	0,22\\
+503,5&4,94&	0,90&	0,96&	0,78&	0,83\\
+496,2&4,87&	1,42&	1,46&	1,33&	1,40\\
+503,0&4,93&	2,00&	2,03&	1,94&	2,01\\
+500,0&4,91&	2,59&	2,62&	2,50&	2,59\\
+472,3&4,63&	3,11&	3,17&	3,05&	3,11\\
+461,8&4,53&	3,68&	3,68&	3,59&	3,59\\
+\hline
+\end{tabular}
+\end{table} 
+
+\begin{figure}[!h]
+   \centering    
+    \includegraphics[width=1\linewidth]{C:/Users/User/Documents/mipt_takonef/лабы/1.3.1/1.3.1_сталь.png}
+    \caption{Линейная аппроксимация показаний для стали} 
+\end{figure}
+\newpage
+
+\begin{figure}[!h]
+   \centering    
+    \includegraphics[width=1\linewidth]{C:/Users/User/Documents/mipt_takonef/лабы/1.3.1/1.3.1_медь.png}
+    \caption{Линейная аппроксимация показаний для меди} 
+\end{figure}
+
+\begin{figure}[!h]
+   \centering    
+    \includegraphics[width=1\linewidth]{C:/Users/User/Documents/mipt_takonef/лабы/1.3.1/1.3.1_дерево1.png}
+    \caption{Линейная аппроксимация показаний для дерева} 
+\end{figure}
+\section{Выводы}
+Полученные экспериментальным методом значения модуля Юнаг совпали с табличными в пределах погрешности. Все теоретические закономерности, рассмотренные в данной работе, также выполнились в пределах точности эксперимента.
+\end{document}
