@@ -142,27 +142,24 @@ T_2 = 2\pi \sqrt{\frac{I-2MR^2}{k}},
     5 & $510$ & $11.5$ & $139$\\ \hline
 \end{tabular}
 \end{table}
-
 \newpage
-Рассчитаем начальную скорость пули по формуле:
 
+\noindent Рассчитаем начальную скорость пули по формуле:
 \[u = \frac{M}{m} \sqrt{\frac{g}{L}} \Delta x\]
-
 Рассчитаем погрешность скорости:
 
-\[\varepsilon_{u_{\text{снст}}} = \varepsilon_M + \varepsilon_m + \frac{1}{2} \varepsilon_g + \frac{1}{2} \varepsilon_L + \varepsilon_{\Delta x} \approx 7.5\%\]
+\[\varepsilon_{u_{\text{снст}}} = \varepsilon_M + \varepsilon_m + \frac{1}{2} \varepsilon_g + \frac{1}{2} \varepsilon_L + \varepsilon_{\Delta x} \approx 4.7\%\]
 
-\[\sigma_{u_{\text{снст}}} = u \varepsilon_{u_{\text{снст}}} \approx 10.4 \text{м/с}\]
+\[\sigma_{u_{\text{снст}}} = u \varepsilon_{u_{\text{снст}}} \approx 6.5 \text{м/с}\]
 
 \[\sigma_{u_{\text{случ}}} \approx 5.6 \text{м/с}\]
 
-\[\sigma_u = \sqrt{\sigma_{u_{\text{снст}}}^2 + \sigma_{u_{\text{случ}}}^2} \approx 11.8 \text{м/с} \]
+\[\sigma_u = \sqrt{\sigma_{u_{\text{снст}}}^2 + \sigma_{u_{\text{случ}}}^2} \approx 8.6 \text{м/с} \]
 
-\[\varepsilon_u = \frac{\sigma_u}{u} \approx 8.5\%\]
-
+\[\varepsilon_u = \frac{\sigma_u}{u} \approx 6.1\%\]
 Тогда:
 
-\[u = (139 \pm 12) \text{м/с}\]
+\[u = (139 \pm 9) \text{м/с}\]
 \\
 Измерим параметры крутильного баллистического маятника (рис. 2):
 \begin{table}[!h]
@@ -185,46 +182,38 @@ T_2 = 2\pi \sqrt{\frac{I-2MR^2}{k}},
 \end{table} \\
 Отсюда:
 \[\sqrt{kI} = \frac{4\pi MR^2 T_1}{T_1^2 - T_2^2} \approx (0.699 \pm 0.006)^{\frac{\text{кг} \cdot \text{м}^2}{\text{с}}}\]
-
 Результаты измерения горизонтального смещения крутильного маятника на шкале, скорость пули для данной амплитуды.
 \begin{table}[!h]
 \centering
 \caption{Амплитуды колебаний на шкале, скорости пуль}
 \begin{tabular}{|c|c|c|c|}        \hline
     №Пули &  m, мг & $\Delta x$, мм & $u$, м/c \\  \hline
-    6 & $510 \pm 5$ & $42 \pm 2$ & 96$\pm 9$\\ \hline
-    7 & $512 \pm 5$ & $39 \pm 2$ & 99$\pm 9$\\ \hline
-    8 & $509 \pm 5$ & $49\pm 2$ & 100$\pm 9$\\ \hline
-    9 & $507 \pm 5$ & $45\pm 2$ & 102$\pm 9$\\ \hline
-    10 & $513 \pm 5$ & $46\pm 2$ & 102$\pm 9$\\ \hline
+    6 & $510$ & $42$ & 99\\ \hline
+    7 & $512$ & $39$ & 96\\ \hline
+    8 & $509$ & $49$ & 102\\ \hline
+    9 & $507$ & $45$ & 100\\ \hline
+    10 & $513$ & $46$ & 102\\ \hline
 \end{tabular}
 \end{table} \\
 Рассчитаем начальную скорость пули по формуле:
 
 \[u = \varphi \frac{\sqrt{kI}}{mr} \approx x \frac{\sqrt{kI}}{2dmr}\]
+Рассчитаем погрешность cкорости:
+\[
+\frac{\sigma_{80}}{g_0} = \sqrt{ \left( \frac{\sigma_L}{L} \right)^2 + 4 \left( \frac{\sigma_T}{T} \right)^2 }.
+\]
+\[\sigma_{u_{\text{случ}}} \approx 4^{\frac{\text{м}}{\text{с}}}\]
 
-\[\varepsilon_u = \varepsilon_{\sqrt{kI}} + \varepsilon_x + \varepsilon_m + \varepsilon_r \approx 5.8\%\]
+\[\sigma_{u_{\text{сист}}} = u \varepsilon_u \approx 6^{\frac{\text{м}}{\text{с}}}\]
 
-Рассчитаем погрешность:
-
-\[\sigma_{u_{\text{случ}}} \approx 10^{\frac{\text{м}}{\text{с}}}\]
-
-\[\sigma_{u_{\text{сист}}} = u \varepsilon_u \approx 5^{\frac{\text{м}}{\text{с}}}\]
-
-\[\sigma_u = \sqrt{\sigma_{u_{\text{сист}}}^2 + \sigma_{u_{\text{случ}}}^2} \approx 10.9^{\frac{\text{м}}{\text{с}}}\]
-
+\[\sigma_u = \sqrt{\sigma_{u_{\text{сист}}}^2 + \sigma_{u_{\text{случ}}}^2} \approx 7.2^{\frac{\text{м}}{\text{с}}}\]
 По итогу:
-
-\[u = (94 \pm 11)^{\frac{\text{м}}{\text{с}}} (11.7\%)\]
-
-
-Среднее значение и разброс:
-
-Для поступательного маятника средняя скорость пули $u_{mid}=126\pm 1$ м/с
-
-Для крутильного маятника средняя скорость пули $u_{mid}=100\pm 1$ м/с
+\[u = (100 \pm 7)^{\frac{\text{м}}{\text{с}}}\] \\
+Среднее значение и разброс: \\
+Для поступательного маятника средняя скорость пули $u=139\pm 12$ м/с \\
+Для крутильного маятника средняя скорость пули $u=100\pm 7$ м/с
 
 \section{Выводы}
-
+В резултьтате работы были измерены скорости пули для двух различных установок.
 
 \end{document}
